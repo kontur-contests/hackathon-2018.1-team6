@@ -4,7 +4,8 @@ using System.Collections;
 public class World : MonoBehaviour
 {
     BackgroundSlider backgroundSlider;
-    PlayerActions player;
+    [SerializeField]
+    public PlayerActions player;
     [SerializeField]
     public ControllerOfNumbers numbersController;
     public bool isRunning = true;
