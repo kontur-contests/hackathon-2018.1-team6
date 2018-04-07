@@ -10,10 +10,12 @@ public class BackgroundSlider : MonoBehaviour {
 
     [SerializeField]
     float speed;
+    [SerializeField]
+    float boost;
 
 	// Use this for initialization
 	void Start () {
-	
+        boost = (float)0.001;
 	}
 	
 	// Update is called once per frame
@@ -24,5 +26,7 @@ public class BackgroundSlider : MonoBehaviour {
         {
             transform.position = new Vector3(rightBound.position.x - leftBound.transform.position.x + transform.position.x, transform.position.y, transform.position.z);
         }
+
+        speed += boost;
 	}
 }
