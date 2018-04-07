@@ -26,8 +26,10 @@ public class ButtonsController : MonoBehaviour
     {
         var playerNumber = player.CurrentNumber;
         var enemy = World.world.numbersController.GetLast();
+
         if (enemy == null)
             return;
+
         var enemyNumber = enemy.CurrentNumber;
         var result = operate(playerNumber, enemyNumber);
 
