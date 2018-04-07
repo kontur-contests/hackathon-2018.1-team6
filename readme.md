@@ -17,7 +17,7 @@ The most popular fork of the game "InfinitiesWar: I can't stop those damn number
 
 ## Authors
 
-* head of development team -
+* head of development team - Denis Kataev
 * senior programmer -
 * junior programmer 1 -
 * junior programmer 2 -
