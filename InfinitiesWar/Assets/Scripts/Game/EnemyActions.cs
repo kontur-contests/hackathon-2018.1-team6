@@ -26,7 +26,7 @@ public class EnemyActions : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        transform.position -= new Vector3(enemySpeed.speed, 0, 0);
+        transform.position -= new Vector3(enemySpeed.speed, 0, 0) * Time.deltaTime;
 
         if (transform.position.x < leftBound.position.x)
         {
