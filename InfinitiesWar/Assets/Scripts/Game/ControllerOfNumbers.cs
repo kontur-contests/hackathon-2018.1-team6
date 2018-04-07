@@ -33,7 +33,7 @@ public class ControllerOfNumbers : MonoBehaviour {
 
     IEnumerator Generate()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
 
         var enemy = Instantiate(enemyPrefab);
         enemy.gameObject.SetActive(true);
