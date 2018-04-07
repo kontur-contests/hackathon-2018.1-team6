@@ -13,7 +13,15 @@ Game for those who missed high school
 ## Forks and Pull Requests
 
 Firstly, thank you for wanting to contribute! Bug fixes and tweaks are welcomed.
-The most popular fork of th "InfinitiesWar: Those damn numbers I can't stop"
+The most popular fork of the game "InfinitiesWar: I can't stop those damn numbers"
+
+## Authors
+
+* head of development team -
+* senior programmer -
+* junior programmer 1 -
+* junior programmer 2 -
+* game designer - Mike Savenkov
 
 ## Why version 1.00?
 
