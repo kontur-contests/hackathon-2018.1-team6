@@ -16,7 +16,6 @@ public class ButtonsController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         
