@@ -31,7 +31,14 @@ public class EnemyActions : MonoBehaviour {
         if (transform.position.x < leftBound.position.x)
         {
             Destroy(gameObject);
+            FindObjectOfType<ControllerOfNumbers>().Dequeue();
         }
         Enemy.text = CurrentNumber.ToString();
+    }
+
+    void DestroyEnemy()
+    {
+        Destroy(gameObject);
+        FindObjectOfType<ControllerOfNumbers>().Dequeue();
     }
 }
