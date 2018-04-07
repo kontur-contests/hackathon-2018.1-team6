@@ -11,14 +11,6 @@ public class FadeBehaviour : MonoBehaviour{
     float speed;
     float state;
 
-    protected void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-            FadeOut();
-        if (Input.GetMouseButtonDown(1))
-            FadeIn();
-    }
-
     public void FadeIn()
     {
         StartCoroutine(FadeInCoroutine());
