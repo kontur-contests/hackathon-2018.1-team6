@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControllerOfNumbers : MonoBehaviour {
 
     [SerializeField]
-    EnemyActions enemyPrefab;
+    public EnemyActions enemyPrefab;
 
     [SerializeField]
     public int current;
@@ -14,6 +14,7 @@ public class ControllerOfNumbers : MonoBehaviour {
     public Queue<EnemyActions> enemies = new Queue<EnemyActions>() ;
     int previos;
     PlayerActions playerNumber;
+    bool isRunning = true;
 
 	// Use this for initialization
 	void Start () {
@@ -23,12 +24,15 @@ public class ControllerOfNumbers : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (reloud % 30 == 0)
+        if (World.world.isRunning)
         {
-            current = Random.Range(1, 9);
-            previos = current;
+            if (reloud % 30 == 0)
+            {
+                current = Random.Range(1, 9);
+                previos = current;
+            }
+            ++reloud;
         }
-        ++reloud;
 	}
 
     IEnumerator Generate()
