@@ -40,21 +40,27 @@ public class ButtonsController : MonoBehaviour
 
     public void Add()
     {
-        Operate((a, b) => a + b);
+        if (World.world.isRunning)
+            Operate((a, b) => a + b);
     }
 
     public void Subtract()
     {
-        Operate((a, b) => a - b);
+        if (World.world.isRunning)
+            Operate((a, b) => a - b);
     }
 
     public void Multiply()
     {
-        Operate((a, b) => a * b);
+        if (World.world.isRunning)
+            Operate((a, b) => a * b);
     }
 
     public void Divide()
     {
+        if (!World.world.isRunning)
+            return;
+
         var playerNumber = player.CurrentNumber;
         var enemy = World.world.numbersController.GetLast();
 
