@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class ButtonsController : MonoBehaviour
 {
@@ -21,23 +22,42 @@ public class ButtonsController : MonoBehaviour
         
     }
 
+    public void Operate(int result)
+    {
+        if (isValidOperation(result))
+        {
+            player.CurrentNumber = (int) result;
+        }
+        else
+        {
+            Debug.Log("Operation is impossible");
+        }
+    }
+
     public void Add()
     {
-        Debug.Log("Add called");
+        Operate(player.CurrentNumber + enemy.CurrentNumber);
     }
 
     public void Subtract()
     {
-        Debug.Log("Subtract called");
+        Operate(player.CurrentNumber - enemy.CurrentNumber);
     }
 
     public void Multiply()
     {
-        Debug.Log("Multiply called");
+        Operate(player.CurrentNumber * enemy.CurrentNumber);
     }
 
     public void Divide()
     {
-        Debug.Log("Divide called");
+        if (player.CurrentNumber % enemy.CurrentNumber == 0)
+            Operate(player.CurrentNumber / enemy.CurrentNumber);
+        Debug.Log("Divide is impossible");
+    }
+
+    private bool isValidOperation(int result)
+    {
+        return result > 0 && result < 10;
     }
 }
