@@ -15,7 +15,7 @@ public class BackgroundSlider : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        boost = (float)0.001;
+        boost = (float)0.00003;
 	}
 	
 	// Update is called once per frame
