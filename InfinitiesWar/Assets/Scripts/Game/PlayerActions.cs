@@ -7,7 +7,7 @@ public class PlayerActions : MonoBehaviour {
     [SerializeField]
     TextMesh Player;
 
-    int CurrentNumber;
+    public int CurrentNumber;
 
 	// Use this for initialization
 	void Start () {
