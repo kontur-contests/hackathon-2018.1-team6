@@ -21,21 +21,24 @@ public class BackgroundSlider : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
+        if (World.world.isRunning)
+        {
+            transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
 
-        if(transform.position.x < leftBound.position.x)
-        {
-            transform.position = new Vector3(rightBound.position.x - leftBound.transform.position.x + transform.position.x, transform.position.y, transform.position.z);
-        }
+            if (transform.position.x < leftBound.position.x)
+            {
+                transform.position = new Vector3(rightBound.position.x - leftBound.transform.position.x + transform.position.x, transform.position.y, transform.position.z);
+            }
 
-        //Max speed = 5
-        if (speed < maxSpeed)
-        {
-            speed += boost * Time.deltaTime;
-        }
-        else
-        {
-            speed = maxSpeed;
+            //Max speed = 5
+            if (speed < maxSpeed)
+            {
+                speed += boost * Time.deltaTime;
+            }
+            else
+            {
+                speed = maxSpeed;
+            }
         }
 	}
 }

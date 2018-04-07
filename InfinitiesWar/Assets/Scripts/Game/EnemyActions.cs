@@ -18,25 +18,28 @@ public class EnemyActions : MonoBehaviour {
     public int CurrentNumber;
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         CurrentNumber = (int)Random.Range(1, 9);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.position -= new Vector3(enemySpeed.speed, 0, 0) * Time.deltaTime;
-
-        if (transform.position.x < leftBound.position.x)
+        if (World.world.isRunning)
         {
-            Destroy(gameObject);
-            FindObjectOfType<ControllerOfNumbers>().Dequeue();
+            transform.position -= new Vector3(enemySpeed.speed, 0, 0) * Time.deltaTime;
+
+            if (transform.position.x < leftBound.position.x)
+            {
+                Destroy(gameObject);
+                FindObjectOfType<ControllerOfNumbers>().Dequeue();
+            }
+            Enemy.text = CurrentNumber.ToString();
         }
-        Enemy.text = CurrentNumber.ToString();
     }
 
-    void DestroyEnemy()
+    public void DestroyEnemy()
     {
         Destroy(gameObject);
         FindObjectOfType<ControllerOfNumbers>().Dequeue();
