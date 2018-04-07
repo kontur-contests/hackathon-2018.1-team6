@@ -5,10 +5,10 @@ public class ButtonsController : MonoBehaviour
 {
 
     [SerializeField]
-    PlayerBehaviour player;
+    PlayerActions player;
 
     [SerializeField]
-    PlayerBehaviour enemy;
+    EnemyActions enemy;
     // Use this for initialization
     void Start()
     {
@@ -18,11 +18,26 @@ public class ButtonsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    public void Operate()
+    public void Add()
     {
+        Debug.Log("Add called");
+    }
 
+    public void Subtract()
+    {
+        Debug.Log("Subtract called");
+    }
+
+    public void Multiply()
+    {
+        Debug.Log("Multiply called");
+    }
+
+    public void Divide()
+    {
+        Debug.Log("Divide called");
     }
 }
