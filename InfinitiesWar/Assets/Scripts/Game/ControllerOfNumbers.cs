@@ -11,7 +11,7 @@ public class ControllerOfNumbers : MonoBehaviour {
     public int current;
 
     public int reloud;
-    public Queue<EnemyActions> enemies;
+    public Queue<EnemyActions> enemies = new Queue<EnemyActions>() ;
     int previos;
     PlayerActions playerNumber;
 
