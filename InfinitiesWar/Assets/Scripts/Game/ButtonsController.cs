@@ -22,38 +22,42 @@ public class ButtonsController : MonoBehaviour
         
     }
 
-    public void Operate(int result)
+    public void Operate(Func<int, int, int> operate)
     {
+        var playerNumber = player.CurrentNumber;
+        var enemy = World.world.numbersController.GetLast();
+        if (enemy == null)
+            return;
+        var enemyNumber = enemy.CurrentNumber;
+        var result = operate(playerNumber, enemyNumber);
+
         if (isValidOperation(result))
-        {
-            player.CurrentNumber = (int) result;
-        }
+            player.CurrentNumber = result;
         else
         {
             Debug.Log("Operation is impossible");
+            World.world.Stop();
         }
     }
 
     public void Add()
     {
-        Operate(player.CurrentNumber + enemy.CurrentNumber);
+        Operate((a, b) => a + b);
     }
 
     public void Subtract()
     {
-        Operate(player.CurrentNumber - enemy.CurrentNumber);
+        Operate((a, b) => a - b);
     }
 
     public void Multiply()
     {
-        Operate(player.CurrentNumber * enemy.CurrentNumber);
+        Operate((a, b) => a * b);
     }
 
     public void Divide()
     {
-        if (player.CurrentNumber % enemy.CurrentNumber == 0)
-            Operate(player.CurrentNumber / enemy.CurrentNumber);
-        Debug.Log("Divide is impossible");
+        Operate((a, b) => a / b);
     }
 
     private bool isValidOperation(int result)
