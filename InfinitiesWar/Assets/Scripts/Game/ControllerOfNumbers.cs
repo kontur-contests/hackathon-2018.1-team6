@@ -11,10 +11,9 @@ public class ControllerOfNumbers : MonoBehaviour {
     public int current;
 
     public int reloud;
-    public Queue<EnemyActions> enemies = new Queue<EnemyActions>() ;
+    public Queue<EnemyActions> enemies = new Queue<EnemyActions>();
     int previos;
     PlayerActions playerNumber;
-    bool isRunning = true;
 
 	// Use this for initialization
 	void Start () {
@@ -37,14 +36,17 @@ public class ControllerOfNumbers : MonoBehaviour {
 
     IEnumerator Generate()
     {
-        yield return new WaitForSeconds(2);
+        if (World.world.isRunning)
+        {
+            yield return new WaitForSeconds(2);
 
-        var enemy = Instantiate(enemyPrefab);
-        enemy.gameObject.SetActive(true);
+            var enemy = Instantiate(enemyPrefab);
+            enemy.gameObject.SetActive(true);
 
-        enemies.Enqueue(enemy);
+            enemies.Enqueue(enemy);
 
-        StartCoroutine(Generate());
+            StartCoroutine(Generate());
+        }
     }
 
     public void Dequeue()
