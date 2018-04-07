@@ -3,8 +3,13 @@ using System.Collections;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    Transform leftBound;
+    [SerializeField]
+    Transform rightBound;
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	

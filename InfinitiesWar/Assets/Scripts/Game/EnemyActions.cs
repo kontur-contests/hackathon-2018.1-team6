@@ -7,6 +7,14 @@ public class EnemyActions : MonoBehaviour {
     [SerializeField]
     TextMesh Enemy;
 
+    [SerializeField]
+    Transform leftBound;
+    [SerializeField]
+    Transform rightBound;
+
+    [SerializeField]
+    BackgroundSlider enemySpeed;
+
     public int CurrentNumber;
 
     // Use this for initialization
@@ -18,6 +26,12 @@ public class EnemyActions : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        transform.position -= new Vector3(enemySpeed.speed, 0, 0);
+
+        if (transform.position.x < leftBound.position.x)
+        {
+            Destroy(gameObject);
+        }
         Enemy.text = CurrentNumber.ToString();
     }
 }

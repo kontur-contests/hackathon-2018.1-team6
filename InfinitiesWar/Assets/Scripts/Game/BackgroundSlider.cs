@@ -9,7 +9,7 @@ public class BackgroundSlider : MonoBehaviour {
     Transform rightBound;
 
     [SerializeField]
-    float speed;
+    public float speed;
     [SerializeField]
     float boost;
 
@@ -27,6 +27,10 @@ public class BackgroundSlider : MonoBehaviour {
             transform.position = new Vector3(rightBound.position.x - leftBound.transform.position.x + transform.position.x, transform.position.y, transform.position.z);
         }
 
-        speed += boost;
+        //Max speed = 5
+        if (speed < 5)
+        {
+            speed += boost;
+        }
 	}
 }
