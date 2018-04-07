@@ -17,11 +17,11 @@ The most popular fork of the game "InfinitiesWar: I can't stop those damn number
 
 ## Authors
 
-head of development team -
-senior programmer -
-junior programmer 1 -
-junior programmer 2 -
-game designer - Mike Savenkov
+* head of development team -
+* senior programmer -
+* junior programmer 1 -
+* junior programmer 2 -
+* game designer - Mike Savenkov
 
 ## Why version 1.00?
 
