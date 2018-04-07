@@ -33,13 +33,10 @@ public class ButtonsController : MonoBehaviour
         var enemyNumber = enemy.CurrentNumber;
         var result = operate(playerNumber, enemyNumber);
 
-        if (isValidOperation(result))
-            player.CurrentNumber = result;
-        else
-        {
-            Debug.Log("Operation is impossible");
+        player.CurrentNumber = result;
+
+        if (!isValidOperation(result))
             World.world.Stop();
-        }
     }
 
     public void Add()
@@ -59,7 +56,18 @@ public class ButtonsController : MonoBehaviour
 
     public void Divide()
     {
-        Operate((a, b) => a / b);
+        var playerNumber = player.CurrentNumber;
+        var enemy = World.world.numbersController.GetLast();
+
+        if (enemy == null)
+            return;
+
+        var enemyNumber = enemy.CurrentNumber;
+
+        player.CurrentNumber = (int) (playerNumber / enemyNumber);
+
+        if (playerNumber % enemyNumber != 0)
+            World.world.Stop();
     }
 
     private bool isValidOperation(int result)
