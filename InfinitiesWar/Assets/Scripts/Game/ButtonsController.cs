@@ -18,7 +18,22 @@ public class ButtonsController : MonoBehaviour
 
     void Update()
     {
-        
+        HandleInput();
+    }
+
+    private void HandleInput()
+    {
+        if (Input.GetKey(KeyCode.KeypadPlus))
+            Add();
+
+        if (Input.GetKey(KeyCode.KeypadMinus))
+            Subtract();
+
+        if (Input.GetKey(KeyCode.KeypadMultiply))
+            Multiply();
+
+        if (Input.GetKey(KeyCode.KeypadDivide))
+            Divide();
     }
 
     public void Operate(Func<int, int, int> operate)
