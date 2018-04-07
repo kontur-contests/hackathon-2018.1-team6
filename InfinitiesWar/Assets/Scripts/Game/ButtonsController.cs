@@ -33,6 +33,7 @@ public class ButtonsController : MonoBehaviour
         var result = operate(playerNumber, enemyNumber);
 
         player.CurrentNumber = result;
+        World.world.numbersController.GetLast().DestroyEnemy();
 
         if (!isValidOperation(result))
             World.world.Stop();
@@ -70,6 +71,7 @@ public class ButtonsController : MonoBehaviour
         var enemyNumber = enemy.CurrentNumber;
 
         player.CurrentNumber = (int) (playerNumber / enemyNumber);
+        World.world.numbersController.GetLast().DestroyEnemy();
 
         if (playerNumber % enemyNumber != 0)
             World.world.Stop();

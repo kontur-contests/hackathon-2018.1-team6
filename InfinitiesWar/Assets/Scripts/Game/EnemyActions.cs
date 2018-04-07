@@ -31,10 +31,8 @@ public class EnemyActions : MonoBehaviour {
             transform.position -= new Vector3(enemySpeed.speed, 0, 0) * Time.deltaTime;
 
             if (transform.position.x < leftBound.position.x)
-            {
-                Destroy(gameObject);
-                FindObjectOfType<ControllerOfNumbers>().Dequeue();
-            }
+                DestroyEnemy();
+
             Enemy.text = CurrentNumber.ToString();
         }
     }
