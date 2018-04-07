@@ -8,6 +8,8 @@ public class World : MonoBehaviour
     public PlayerActions player;
     [SerializeField]
     public ControllerOfNumbers numbersController;
+    [SerializeField]
+    public ScoreBoardLoader scoreBoardLoader;
     public bool isRunning = true;
     public static World world;
 
@@ -39,5 +41,6 @@ public class World : MonoBehaviour
         if (enemy != null)
             enemy.DestroyEnemy();
         isRunning = false;
+        scoreBoardLoader.ShowBoard();
     }
 }

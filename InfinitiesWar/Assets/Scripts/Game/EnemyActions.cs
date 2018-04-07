@@ -31,8 +31,11 @@ public class EnemyActions : MonoBehaviour {
         {
             transform.position -= new Vector3(enemySpeed.speed, 0, 0) * Time.deltaTime;
 
-            if (transform.position.x < leftBound.position.x)
+            if (transform.position.x <= -8)
+            {
                 DestroyEnemy();
+                World.world.Stop();
+            }
 
             Enemy.text = CurrentNumber.ToString();
         }
