@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(NumberRenderer))]
 public class EnemyActions : MonoBehaviour {
 
-    [SerializeField]
-    TextMesh Enemy;
+    NumberRenderer numberRenderer;
 
     [SerializeField]
     Transform leftBound;
@@ -16,6 +16,11 @@ public class EnemyActions : MonoBehaviour {
     BackgroundSlider enemySpeed;
 
     public int CurrentNumber;
+
+    protected void Awake()
+    {
+        numberRenderer = GetComponent<NumberRenderer>();
+    }
 
     // Use this for initialization
     private void Start()
@@ -37,7 +42,7 @@ public class EnemyActions : MonoBehaviour {
                 World.world.Stop();
             }
 
-            Enemy.text = CurrentNumber.ToString();
+            numberRenderer.Number = CurrentNumber;
         }
     }
 
