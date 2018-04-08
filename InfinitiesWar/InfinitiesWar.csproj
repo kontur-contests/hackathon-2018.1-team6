@@ -236,6 +236,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Core\GameManager.cs" />
     <Compile Include="Assets\Scripts\Game\BackgroundSlider.cs" />
+    <Compile Include="Assets\Scripts\Game\BackgroundSpriteController.cs" />
     <Compile Include="Assets\Scripts\Game\ButtonsController.cs" />
     <Compile Include="Assets\Scripts\Game\ControllerOfNumbers.cs" />
     <Compile Include="Assets\Scripts\Game\EnemyActions.cs" />
