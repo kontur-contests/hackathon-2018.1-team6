@@ -23,6 +23,3 @@ The most popular fork of the game "InfinitiesWar: I can't stop those damn number
 * junior programmer 2 - Leva Potapov
 * game designer - Mike Savenkov
 
-## Why version 1.00?
-
-InfinitiesWar 1 has been at "version" 1.00 for a long time, because
