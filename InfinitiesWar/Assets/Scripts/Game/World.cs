@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class World : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class World : MonoBehaviour
     AudioClip backgroundAudioClip;
     [SerializeField]
     AudioSource backgroudAudioSource;
+
+    [SerializeField]
+    Text scoreText;
 
     BackgroundSlider backgroundSlider;
     [SerializeField]
