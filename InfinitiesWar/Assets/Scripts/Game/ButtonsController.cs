@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 
@@ -12,10 +13,12 @@ public class ButtonsController : MonoBehaviour
     EnemyActions enemy;
     [SerializeField]
     private int score;
+    [SerializeField]
+    private Text scoreText;
     // Use this for initialization
     void Start()
     {
-
+        scoreText.text = "";
     }
 
     void Update()
@@ -56,7 +59,8 @@ public class ButtonsController : MonoBehaviour
         if (!isValidOperation(result))
         {
             World.world.Stop();
-
+            score--;
+            scoreText.text = "Your score: " + score.ToString();
         }
     }
 
@@ -98,7 +102,8 @@ public class ButtonsController : MonoBehaviour
         if (playerNumber % enemyNumber != 0)
         {
             World.world.Stop();
-
+            score--;
+            scoreText.text = "Your score: " + score.ToString();
         }
     }
 

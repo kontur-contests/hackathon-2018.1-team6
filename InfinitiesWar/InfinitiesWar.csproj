@@ -240,7 +240,8 @@
     <Compile Include="Assets\Scripts\Game\ControllerOfNumbers.cs" />
     <Compile Include="Assets\Scripts\Game\EnemyActions.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerActions.cs" />
-    <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Game\ScoreBoardLoader.cs" />
+    <Compile Include="Assets\Scripts\Game\World.cs" />
     <Compile Include="Assets\Scripts\UI\FadeBehaviour.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuBehaviour.cs" />
   </ItemGroup>
