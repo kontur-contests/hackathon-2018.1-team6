@@ -18,4 +18,10 @@ public class PlayerActions : MonoBehaviour {
 	void Update () {
 		Player.text = CurrentNumber.ToString();
 	}
+
+    public void DestroyPlayer()
+    {
+        Destroy(gameObject);
+        //FindObjectOfType<ControllerOfNumbers>().Dequeue();
+    }
 }

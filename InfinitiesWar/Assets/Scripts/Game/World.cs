@@ -40,6 +40,7 @@ public class World : MonoBehaviour
         EnemyActions enemy = numbersController.GetLast();
         if (enemy != null)
             enemy.DestroyEnemy();
+        player.DestroyPlayer();
         isRunning = false;
         scoreBoardLoader.ShowBoard();
     }
