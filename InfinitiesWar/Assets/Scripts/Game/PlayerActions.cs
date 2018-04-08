@@ -26,4 +26,10 @@ public class PlayerActions : MonoBehaviour {
 		//Player.text = CurrentNumber.ToString();
         numberRenderer.Number = CurrentNumber;
 	}
+
+    public void DestroyPlayer()
+    {
+        Destroy(gameObject);
+        //FindObjectOfType<ControllerOfNumbers>().Dequeue();
+    }
 }

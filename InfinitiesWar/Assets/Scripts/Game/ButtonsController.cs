@@ -28,16 +28,16 @@ public class ButtonsController : MonoBehaviour
 
     private void HandleInput()
     {
-        if (Input.GetKey(KeyCode.KeypadPlus))
+        if (Input.GetKeyUp(KeyCode.KeypadPlus))
             Add();
 
-        if (Input.GetKey(KeyCode.KeypadMinus))
+        if (Input.GetKeyUp(KeyCode.KeypadMinus))
             Subtract();
 
-        if (Input.GetKey(KeyCode.KeypadMultiply))
+        if (Input.GetKeyUp(KeyCode.KeypadMultiply))
             Multiply();
 
-        if (Input.GetKey(KeyCode.KeypadDivide))
+        if (Input.GetKeyUp(KeyCode.KeypadDivide))
             Divide();
     }
 
