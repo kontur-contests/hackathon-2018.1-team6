@@ -11,6 +11,8 @@ public class World : MonoBehaviour
 
     [SerializeField]
     Text scoreText;
+    [SerializeField]
+    Text currentScoreText;
 
     BackgroundSlider backgroundSlider;
     [SerializeField]
@@ -21,6 +23,14 @@ public class World : MonoBehaviour
     public ScoreBoardLoader scoreBoardLoader;
     public bool isRunning = true;
     public static World world;
+
+    public int Score { get; private set; }
+
+    public void AddScore(int amount)
+    {
+        Score += amount;
+        currentScoreText.text = Score.ToString();
+    }
 
     private void Awake()
     {
@@ -38,6 +48,8 @@ public class World : MonoBehaviour
         backgroudAudioSource.clip = backgroundAudioClip;
         backgroudAudioSource.loop = true;
         backgroudAudioSource.Play();
+
+        currentScoreText.text = string.Empty;
     }
 
     // Update is called once per frame
@@ -53,6 +65,8 @@ public class World : MonoBehaviour
             enemy.DestroyEnemy();
         player.DestroyPlayer();
         isRunning = false;
+
         scoreBoardLoader.ShowBoard();
+        scoreText.text = "Your score: " + Score.ToString();
     }
 }
