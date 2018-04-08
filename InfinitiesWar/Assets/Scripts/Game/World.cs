@@ -1,8 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class World : MonoBehaviour
 {
+    [SerializeField]
+    AudioClip backgroundAudioClip;
+    [SerializeField]
+    AudioSource backgroudAudioSource;
+
+    [SerializeField]
+    Text scoreText;
+
     BackgroundSlider backgroundSlider;
     [SerializeField]
     public PlayerActions player;
@@ -26,7 +35,9 @@ public class World : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        backgroudAudioSource.clip = backgroundAudioClip;
+        backgroudAudioSource.loop = true;
+        backgroudAudioSource.Play();
     }
 
     // Update is called once per frame
