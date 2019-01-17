@@ -17,12 +17,9 @@ The most popular fork of the game "InfinitiesWar: I can't stop those damn number
 
 ## Authors
 
-* head of development team - Denis Kataev
-* senior programmer -
-* junior programmer 1 -
-* junior programmer 2 -
+* head of development team - Denis Kataev (https://t.me/kataev)
+* senior programmer - !?!
+* junior programmer 1 - Roma Nurlanov
+* junior programmer 2 - Leva Potapov
 * game designer - Mike Savenkov
 
-## Why version 1.00?
-
-InfinitiesWar 1 has been at "version" 1.00 for a long time, because

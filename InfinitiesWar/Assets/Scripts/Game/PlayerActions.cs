@@ -7,15 +7,29 @@ public class PlayerActions : MonoBehaviour {
     [SerializeField]
     TextMesh Player;
 
+    NumberRenderer numberRenderer;
+
     public int CurrentNumber;
 
-	// Use this for initialization
-	void Start () {
+    protected void Awake()
+    {
+        numberRenderer = GetComponent<NumberRenderer>();
+    }
+
+    // Use this for initialization
+    void Start () {
 		CurrentNumber = (int)Random.Range(1, 9);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Player.text = CurrentNumber.ToString();
+		//Player.text = CurrentNumber.ToString();
+        numberRenderer.Number = CurrentNumber;
 	}
+
+    public void DestroyPlayer()
+    {
+        Destroy(gameObject);
+        //FindObjectOfType<ControllerOfNumbers>().Dequeue();
+    }
 }
